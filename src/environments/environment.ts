@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backEndUrl: "https://altra-shopping-cart-backend.herokuapp.com"
+  backEndUrl: "http://localhost:4200/api"
 };
 
 /*
