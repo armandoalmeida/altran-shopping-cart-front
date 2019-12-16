@@ -1,7 +1,7 @@
 const proxy = [
     {
         context: '/api',
-        target: 'https://altra-shopping-cart-backend.herokuapp.com',
+        target: 'http://localhost:8080',
         pathRewrite: { '^/api': '' }
     }
 ];
