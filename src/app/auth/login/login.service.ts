@@ -17,6 +17,7 @@ export class LoginService {
     private router: Router
   ) {
     this.loginUrl = env.backEndUrl + '/auth';
+    console.log("ENV: " + env.production);
   }
 
   logon(login: LoginModel): Observable<any> {
