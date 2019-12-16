@@ -1,0 +1,13 @@
+.shopping-cart-lateral {
+    margin-top: 2em !important;
+}
+
+.shopping-cart-lateral .quantity {
+    width: 2em;
+    display: inline-block;
+    text-align: center;
+}
+
+.shopping-cart-lateral .ng-fa-icon {
+    cursor: pointer;
+}
