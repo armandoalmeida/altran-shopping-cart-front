@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.loginService.logon(formData)
       .subscribe(
         data => {
-          localStorage['token'] = data['data']['token'];
+          localStorage['token'] = data['token'];
           this.router.navigate(['/home']);
         },
         err => {
