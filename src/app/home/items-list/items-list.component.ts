@@ -52,4 +52,8 @@ export class ItemsListComponent implements OnInit {
     );
   }
 
+  editItem(item: ItemModel) {
+    
+  }
+
 }
