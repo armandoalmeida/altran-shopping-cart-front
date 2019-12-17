@@ -1,0 +1,29 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-6 order-md-1">
+        <h4 class="mb-3">{{edit ? 'Edit':'Add'}} User</h4>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit(userForm.value)">
+            <div class="mb-3">
+                <label for="name">Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="name" formControlName="name" placeholder="" value=""
+                    required>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="email">Email <span class="text-danger">*</span></label>
+                    <input type="email" class="form-control" id="email" formControlName="email"
+                        placeholder="you@example.com">
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="password">Password <span class="text-danger">*</span></label>
+                    <input type="password" class="form-control" id="password" formControlName="password" placeholder=""
+                        value="" required>
+                </div>
+            </div>
+
+            <hr class="mb-4">
+            <button class="btn btn-primary" type="submit">{{edit ? 'Update':'Create'}} account</button>
+            <a class="btn btn-secondary cancel-button" [routerLink]="['/']">Cancel</a>
+        </form>
+    </div>
+</div>

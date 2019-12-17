@@ -15,7 +15,10 @@ import { ShoppingCartComponent } from './home/shopping-cart/shopping-cart.compon
 import { ItemListService } from './home/items-list/item-list.service'
 import { ShoppingCartService } from './home/shopping-cart/shopping-cart.service';
 import { LoginComponent } from './auth/login/login.component'
-import { LoginService } from './auth/login/login.service'
+import { LoginService } from './auth/login/login.service';
+import { UsersComponent } from './auth/users/users.component';
+import { UsersService } from './auth/users/users.service';
+import { AddItemComponent } from './items/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { LoginService } from './auth/login/login.service'
     HomeComponent,
     ItemsListComponent,
     ShoppingCartComponent,
-    LoginComponent
+    LoginComponent,
+    UsersComponent,
+    AddItemComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +42,8 @@ import { LoginService } from './auth/login/login.service'
   providers: [
     ItemListService,
     ShoppingCartService,
-    LoginService
+    LoginService,
+    UsersService
   ],
   bootstrap: [AppComponent]
 })

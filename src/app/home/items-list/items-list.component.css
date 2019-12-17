@@ -1,3 +1,11 @@
+.items-list {
+    margin-bottom: 2em;
+}
+
 .item-list {
     margin-top: 1em;
+}
+
+.ng-fa-icon {
+    cursor: pointer;
 }

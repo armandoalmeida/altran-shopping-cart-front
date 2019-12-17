@@ -4,12 +4,15 @@ import { Router } from '@angular/router';
 
 import { LoginService } from './login.service'
 
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'sc-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  faUserPlus = faUserPlus;
   loginForm: FormGroup;
 
   constructor(

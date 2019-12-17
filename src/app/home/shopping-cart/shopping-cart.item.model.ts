@@ -1,8 +1,8 @@
-import { ItemListModel } from '../items-list/item-list.model'
+import { ItemModel } from '../../items/item.model'
 
 export class ShoppingCartItemModel {
     constructor(
-        public item: ItemListModel,
+        public item: ItemModel,
         public qtd: number
     ) { }
 }

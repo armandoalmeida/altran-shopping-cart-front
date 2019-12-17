@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ShoppingCartModel } from './shopping-cart.model';
-import { ItemListModel } from '../items-list/item-list.model';
+import { ItemModel } from '../../items/item.model';
 import { HttpClient } from '@angular/common/http';
 import { LoginService } from '../../auth/login/login.service'
 import { Observable } from 'rxjs';
@@ -36,21 +36,21 @@ export class ShoppingCartService {
         })
     }
 
-    getItemUrl(item: ItemListModel): string {
+    getItemUrl(item: ItemModel): string {
         return `${this.shoppingCartUrl}/${this.cart.id}/item/${item.id}`;
     }
 
-    addItem(item: ItemListModel): Observable<ShoppingCartModel> {
+    addItem(item: ItemModel): Observable<ShoppingCartModel> {
         return this.http.post<ShoppingCartModel>(this.getItemUrl(item), {},
             { headers: this.loginService.getHeaders() });
     }
 
-    removeItem(item: ItemListModel): Observable<ShoppingCartModel> {
+    removeItem(item: ItemModel): Observable<ShoppingCartModel> {
         return this.http.delete<ShoppingCartModel>(this.getItemUrl(item),
             { headers: this.loginService.getHeaders() });
     }
 
-    removeAllItems(item: ItemListModel): Observable<ShoppingCartModel> {
+    removeAllItems(item: ItemModel): Observable<ShoppingCartModel> {
         return this.http.delete<ShoppingCartModel>(this.getItemUrl(item).replace("item", "all"),
             { headers: this.loginService.getHeaders() });
     }

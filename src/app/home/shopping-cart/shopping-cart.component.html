@@ -1,6 +1,5 @@
 <h4 class="d-flex justify-content-between align-items-center mb-3">
     <span class="text-muted">Your cart</span>
-    <!-- <span class="badge badge-secondary badge-pill">3</span> -->
 </h4>
 <ul class="list-group mb-3 shopping-cart-lateral">
     <li *ngFor="let cartItem of cart?.items" class="list-group-item d-flex justify-content-between lh-condensed">
@@ -13,12 +12,15 @@
             <h6 class="my-0"> {{cartItem?.item.name}} </h6>
         </div>
         <span class="text-muted">${{cartItem?.item.value}}</span>
-        <span>
+        <span class="text-danger">
             <fa-icon [icon]="faTrashAlt" (click)="removeAllItems(cartItem?.item)"></fa-icon>
         </span>
     </li>
     <li class="list-group-item d-flex justify-content-between">
         <span>Total</span>
         <strong>${{cart?.total | number}}</strong>
+    </li>
+    <li class="list-group-item d-flex justify-content-between">
+        <button class="btn btn-success btn-block">Close Cart</button>
     </li>
 </ul>

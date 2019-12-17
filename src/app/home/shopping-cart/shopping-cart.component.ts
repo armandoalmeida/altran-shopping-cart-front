@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ShoppingCartModel } from './shopping-cart.model'
-import { ItemListModel } from '../items-list/item-list.model';
+import { ItemModel } from '../../items/item.model';
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service'
 
 import { faTrashAlt, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
@@ -26,21 +26,21 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit() {
   }
 
-  addItem(item: ItemListModel) {
+  addItem(item: ItemModel) {
     this.shoppingCartService.addItem(item).subscribe(cart => {
       this.cartOutput.emit(cart);
       this.cart = cart;
     })
   }
 
-  removeItem(item: ItemListModel) {
+  removeItem(item: ItemModel) {
     this.shoppingCartService.removeItem(item).subscribe(cart => {
       this.cartOutput.emit(cart);
       this.cart = cart;
     })
   }
 
-  removeAllItems(item: ItemListModel) {
+  removeAllItems(item: ItemModel) {
     this.shoppingCartService.removeAllItems(item).subscribe(cart => {
       this.cartOutput.emit(cart);
       this.cart = cart;

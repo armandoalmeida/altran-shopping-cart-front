@@ -11,23 +11,22 @@ import { LoginService } from '../auth/login/login.service'
 export class HeaderComponent implements OnInit {
 
   show: boolean;
+  routesToHide: string[];
 
   constructor(
     private route: Router,
     private loginService: LoginService
   ) {
+    this.routesToHide = [
+      '/login', '/users'
+    ];
     this.routeEvent(this.route);
   }
 
   routeEvent(router: Router) {
     router.events.subscribe(e => {
-      if (e instanceof NavigationEnd) {
-        if (e.url == '/login') {
-          this.show = false;
-        } else {
-          this.show = true;
-        }
-      }
+      if (e instanceof NavigationEnd)
+        this.show = this.routesToHide.indexOf(e.url) == -1;
     });
   }
 
