@@ -1,27 +1,28 @@
-# AlShoppingCartFront
+# Altran Shopping Cart - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+Project destinated to Altran recruitment proccess.
 
-## Development server
+## How to run local
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+First run `npm install` to get the project dependencies.
 
-## Code scaffolding
+After that, run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Cloud deploy - Heroku
 
-## Build
+The project was deployed on Heroku platform: https://al-shopping-cart.herokuapp.com/
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## How to use
 
-## Running unit tests
+1. Click "Add user" to create a user
+2. Login into application
+3. Click "Add item" or "Items (header) > Add item"
+4. Send items to cart clicking "Add to cart"
+5. Click "Close cart"
+6. To see all carts, click "Carts" (header)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Stack
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* Angular 8
+* Bootstrap 4
+* Font Awesome
