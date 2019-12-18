@@ -1,0 +1,17 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-6 order-md-1">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">All carts</span>
+        </h4>
+        <ul class="list-group mb-3 shopping-cart-lateral">
+            <li *ngFor="let cart of carts; let i = index"
+                class="list-group-item d-flex justify-content-between lh-condensed cart-desc">
+                <span>#{{i+1}}</span>
+                <span><strong>${{cart.total | number}}</strong></span>
+                <div>
+                    <button [disabled]="cart.total <= 0"  class="btn btn-secondary" (click)="viewCart(cart)">View</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

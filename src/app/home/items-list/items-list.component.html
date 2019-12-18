@@ -15,7 +15,7 @@
             
             <div class="card-footer d-flex justify-content-between align-items-center">
                 <button *ngIf="!edit" (click)="addItemToShoppingCart(item)" class="btn btn-primary">Add to cart</button>
-                <button *ngIf="edit" (click)="editItem(item)" class="btn btn-primary">Save</button>
+                <button *ngIf="edit" (click)="editItem(item)" class="btn btn-primary">Edit</button>
                 <span *ngIf="edit" class="btn btn-outline-danger trashIcon">
                     <fa-icon [icon]="faTrashAlt" (click)="deleteItem(item)"></fa-icon>
                 </span>

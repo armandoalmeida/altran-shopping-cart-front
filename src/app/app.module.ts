@@ -18,7 +18,10 @@ import { LoginComponent } from './auth/login/login.component'
 import { LoginService } from './auth/login/login.service';
 import { UsersComponent } from './auth/users/users.component';
 import { UsersService } from './auth/users/users.service';
-import { AddItemComponent } from './items/add-item/add-item.component';
+import { ItemComponent } from './items/item/item.component';
+import { CartComponent } from './carts/cart/cart.component';
+import { CartService } from './carts/cart.service';
+import { CartsListComponent } from './carts/carts-list/carts-list.component'
 
 @NgModule({
   declarations: [
@@ -29,7 +32,9 @@ import { AddItemComponent } from './items/add-item/add-item.component';
     ShoppingCartComponent,
     LoginComponent,
     UsersComponent,
-    AddItemComponent
+    ItemComponent,
+    CartComponent,
+    CartsListComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +48,8 @@ import { AddItemComponent } from './items/add-item/add-item.component';
     ItemListService,
     ShoppingCartService,
     LoginService,
-    UsersService
+    UsersService,
+    CartService
   ],
   bootstrap: [AppComponent]
 })

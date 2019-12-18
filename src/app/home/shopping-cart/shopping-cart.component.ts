@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { ShoppingCartModel } from './shopping-cart.model'
+import { Router } from '@angular/router';
+import { CartModel } from '../../carts/cart.model'
 import { ItemModel } from '../../items/item.model';
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service'
 
@@ -12,14 +13,15 @@ import { faTrashAlt, faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./shopping-cart.component.css']
 })
 export class ShoppingCartComponent implements OnInit {
-  @Input() cart: ShoppingCartModel;
-  @Output() cartOutput = new EventEmitter<ShoppingCartModel>();
+  @Input() cart: CartModel;
+  @Output() cartOutput = new EventEmitter<CartModel>();
 
   faTrashAlt = faTrashAlt;
   faPlus = faPlus;
   faMinus = faMinus;
 
   constructor(
+    private router: Router,
     private shoppingCartService: ShoppingCartService
   ) { }
 
@@ -45,6 +47,10 @@ export class ShoppingCartComponent implements OnInit {
       this.cartOutput.emit(cart);
       this.cart = cart;
     })
+  }
+
+  closeCart() {
+    this.router.navigate([`/cart/${this.cart.id}`]);
   }
 
 }

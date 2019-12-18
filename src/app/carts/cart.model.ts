@@ -1,6 +1,6 @@
-import { ShoppingCartItemModel } from './shopping-cart.item.model'
+import { ShoppingCartItemModel } from '../home/shopping-cart/shopping-cart.item.model'
 
-export class ShoppingCartModel {
+export class CartModel {
     constructor(
         public id: string,
         public items: ShoppingCartItemModel[],

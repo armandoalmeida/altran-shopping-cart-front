@@ -1,0 +1,22 @@
+<div class="row justify-content-md-center">
+    <div class="col-md-6 order-md-1">
+        <h4 class="d-flex justify-content-between align-items-center mb-3">
+            <span class="text-muted">Your cart</span>
+        </h4>
+        <ul class="list-group mb-3 shopping-cart-lateral">
+            <li *ngFor="let cartItem of cart?.items"
+                class="list-group-item d-flex justify-content-between lh-condensed">
+                <h6 class="my-0"> {{cartItem?.item.name}} </h6>
+                <span class="quantity">x {{cartItem?.quantity}}</span>
+                <span class="text-muted">${{cartItem?.item.value}}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between">
+                <span>Total</span>
+                <strong>${{cart?.total | number}}</strong>
+            </li>
+            <li *ngIf="cart?.status == 'OPENED'" class="list-group-item d-flex justify-content-between">
+                <button class="btn btn-success btn-block" (click)="closeCart()">Close Cart</button>
+            </li>
+        </ul>
+    </div>
+</div>

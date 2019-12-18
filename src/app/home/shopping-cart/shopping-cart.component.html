@@ -21,6 +21,6 @@
         <strong>${{cart?.total | number}}</strong>
     </li>
     <li class="list-group-item d-flex justify-content-between">
-        <button class="btn btn-success btn-block">Close Cart</button>
+        <button [disabled]="cart?.total <= 0" class="btn btn-success btn-block" (click)="closeCart()">Close Cart</button>
     </li>
 </ul>

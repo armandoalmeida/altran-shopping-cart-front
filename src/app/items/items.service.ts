@@ -19,16 +19,22 @@ export class ItemService {
         this.itemsUrls = env.backEndUrl + '/items';
     }
 
-    getItemIdUrl(item: ItemModel): string {
-        return `${this.itemsUrls}/${item.id}`
+    getItemIdUrl(itemId: string): string {
+        return `${this.itemsUrls}/${itemId}`
     }
 
-    save(item: ItemModel): Observable<any> {
+    get(itemId: string): Observable<ItemModel> {
+        return this.http.get<ItemModel>(this.getItemIdUrl(itemId), { headers: this.loginService.getHeaders() });
+    }
+
+    save(item: ItemModel, editing: boolean) {
+        if (editing)
+            return this.http.put(this.getItemIdUrl(item.id), item, { headers: this.loginService.getHeaders() });
         return this.http.post(this.itemsUrls, item, { headers: this.loginService.getHeaders() });
     }
 
     del(item: ItemModel) {
-        return this.http.delete(this.getItemIdUrl(item), { headers: this.loginService.getHeaders() });
+        return this.http.delete(this.getItemIdUrl(item.id), { headers: this.loginService.getHeaders() });
     }
 
 }

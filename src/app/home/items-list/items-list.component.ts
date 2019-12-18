@@ -4,7 +4,7 @@ import { ItemListService } from './item-list.service'
 import { ItemService } from '../../items/items.service'
 import { ItemModel } from '../../items/item.model'
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service'
-import { ShoppingCartModel } from '../shopping-cart/shopping-cart.model'
+import { CartModel } from '../../carts/cart.model'
 import { Router, NavigationEnd } from '@angular/router';
 
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +17,7 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 export class ItemsListComponent implements OnInit {
   faTrashAlt = faTrashAlt;
   items: ItemModel[]
-  @Output() cartOutput = new EventEmitter<ShoppingCartModel>();
+  @Output() cartOutput = new EventEmitter<CartModel>();
   edit: boolean;
 
   constructor(
@@ -53,7 +53,7 @@ export class ItemsListComponent implements OnInit {
   }
 
   editItem(item: ItemModel) {
-    
+    this.router.navigate([`/edit-item/${item.id}`]);
   }
 
 }
