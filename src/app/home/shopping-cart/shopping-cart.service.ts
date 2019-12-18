@@ -54,4 +54,11 @@ export class ShoppingCartService {
         return this.http.delete<CartModel>(this.getItemUrl(item).replace("item", "all"),
             { headers: this.loginService.getHeaders() });
     }
+
+    orderItems(cart: CartModel): CartModel {
+        cart.items.sort((item1, item2) => {
+            return item1.item.value-item2.item.value;
+        })
+        return cart;
+    }
 }

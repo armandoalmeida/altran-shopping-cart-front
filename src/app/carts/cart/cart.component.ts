@@ -23,7 +23,7 @@ export class CartComponent implements OnInit {
     let itemId = this.route.snapshot.paramMap.get("id");
     if (itemId) {
       this.cartService.get(itemId).subscribe(cart => {
-        this.cart = cart;
+        this.cart = this.orderItems(cart);
       });
     }
   }
@@ -33,5 +33,12 @@ export class CartComponent implements OnInit {
       this.router.navigate(['/carts']);
     });
   }
+
+  orderItems(cart: CartModel): CartModel {
+    cart.items.sort((item1, item2) => {
+        return item1.item.value-item2.item.value;
+    })
+    return cart;
+}
 
 }

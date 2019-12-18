@@ -41,7 +41,7 @@ export class ItemsListComponent implements OnInit {
 
   addItemToShoppingCart(item: ItemModel): void {
     this.shoppingCartService.addItem(item).subscribe(cart => {
-      this.cartOutput.emit(cart);
+      this.cartOutput.emit(this.shoppingCartService.orderItems(cart));
     })
   }
 

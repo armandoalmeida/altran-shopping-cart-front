@@ -31,21 +31,21 @@ export class ShoppingCartComponent implements OnInit {
   addItem(item: ItemModel) {
     this.shoppingCartService.addItem(item).subscribe(cart => {
       this.cartOutput.emit(cart);
-      this.cart = cart;
+      this.cart = this.shoppingCartService.orderItems(cart);
     })
   }
 
   removeItem(item: ItemModel) {
     this.shoppingCartService.removeItem(item).subscribe(cart => {
       this.cartOutput.emit(cart);
-      this.cart = cart;
+      this.cart = this.shoppingCartService.orderItems(cart);
     })
   }
 
   removeAllItems(item: ItemModel) {
     this.shoppingCartService.removeAllItems(item).subscribe(cart => {
       this.cartOutput.emit(cart);
-      this.cart = cart;
+      this.cart = this.shoppingCartService.orderItems(cart);
     })
   }
 

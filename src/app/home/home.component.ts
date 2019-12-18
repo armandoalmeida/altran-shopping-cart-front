@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.shoppingCartService.getCart().then(cart => {
-      this.shoppingCart = cart;
+      this.shoppingCart = this.shoppingCartService.orderItems(cart);
     })
   }
 
